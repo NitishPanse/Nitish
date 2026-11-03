@@ -1,0 +1,18 @@
+int motorPin = 9; // PWM pin
+void setup() {
+pinMode(motorPin, OUTPUT);
+}
+void loop() {
+// Low speed
+analogWrite(motorPin, 70);
+delay(3000);
+// Medium speed
+analogWrite(motorPin, 150);
+delay(3000);
+// High speed
+analogWrite(motorPin, 255);
+delay(3000);
+// Stop motor
+analogWrite(motorPin, 0);
+delay(3000);
+}

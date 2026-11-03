@@ -1,0 +1,23 @@
+from gpiozero import DistanceSensor
+from time import sleep
+
+# HC-SR04 connections using BCM GPIO numbering
+sensor = DistanceSensor(
+    echo=24,
+    trigger=23,
+    max_distance=4
+)
+
+try:
+    while True:
+        distance = sensor.distance * 100
+
+        print(f"Distance: {distance:.2f} cm")
+
+        sleep(1)
+
+except KeyboardInterrupt:
+    print("\nProgram stopped.")
+
+finally:
+    sensor.close()
